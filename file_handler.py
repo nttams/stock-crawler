@@ -1,6 +1,6 @@
 import json
 
-CONFIG_FILE = 'config.json'
+CONFIG_FILE = 'config'
 DATA_DIR = 'data'
 
 def read_local_data(company):
