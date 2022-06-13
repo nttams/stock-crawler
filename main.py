@@ -4,7 +4,7 @@ import ploter
 
 def main():
     data_crawler.update_all_data()
-    ploter.draw(['acb', 'bid', 'vhm'])
+    ploter.draw_all()
 
 if __name__ == '__main__':
     main()

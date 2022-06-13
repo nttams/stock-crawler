@@ -1,4 +1,5 @@
 import json
+import os
 
 CONFIG_FILE = 'config'
 DATA_DIR = 'data'
@@ -29,3 +30,7 @@ def write_data(company, data):
     f = open(DATA_DIR + '/' + company + '.json', 'w')
     f.write(data)
     f.close()
+
+def create_data_folder():
+    if not os.path.exists(DATA_DIR):
+        os.makedirs(DATA_DIR)
