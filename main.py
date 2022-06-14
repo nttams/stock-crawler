@@ -1,5 +1,4 @@
 import data_crawler
-import file_handler
 import ploter
 
 def main():

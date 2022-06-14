@@ -1,19 +1,20 @@
 import matplotlib.pyplot as plt
 import datetime as dt
-import file_handler
+import file_handler as fh
+import mpld3
 
 fig, ax = plt.subplots()
 
 def draw(companies):
     for company in companies:
-        data = file_handler.read_local_data(company)
+        data = fh.read_local_data(company)
         x, y = parse_fields(data, 'Close')
         plot(x, y, company)
 
     show()
 
 def draw_all():
-    company_list = file_handler.read_config()
+    company_list = fh.read_config()
     draw(company_list)
 
 def parse_fields(data, field):
@@ -28,6 +29,12 @@ def parse_fields(data, field):
 
 def plot(x, y, company):
     ax.plot(x, y, label = company, linewidth = 0.8)
+
+def save_html():
+    mpld3.save_html(fig, 'plot.html')
+
+def show_in_web():
+    mpld3.show(fig)
 
 def show():
     plt.title("Stock prices")
