@@ -14,7 +14,7 @@ def draw(companies):
     show()
 
 def draw_all():
-    company_list = fh.read_config()
+    company_list = fh.get_company_list()
     draw(company_list)
 
 def parse_fields(data, field):

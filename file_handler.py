@@ -1,7 +1,7 @@
 import json
 import os
 
-CONFIG_FILE = 'config'
+CONFIG_FILE = 'config.json'
 DATA_DIR = 'data'
 
 def read_local_data(company):
@@ -14,7 +14,7 @@ def read_local_data(company):
 
     return json.loads(data)
 
-def read_config():
+def get_company_list():
     try:
         f = open(CONFIG_FILE, 'r')
         config = f.read()
